@@ -11,7 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/voiture")
-public class VoitureController {
+public class
+
+
+VoitureController {
 
     @Autowired
     private IVoitureService voitureService;
