@@ -1,6 +1,9 @@
 package com.isgis.manageparc.services;
 
+import com.isgis.manageparc.models.Employe;
 import com.isgis.manageparc.models.Mission;
+import com.isgis.manageparc.models.Voiture;
+import com.isgis.manageparc.models.dto.MissionDTO;
 
 
 import java.util.List;
@@ -15,4 +18,6 @@ public interface IMissionService {
     Mission update(Mission mission);
 
     void deleteById(Integer missionId);
+
+    Mission convertDTOToMission(MissionDTO missionDTO, Employe employe, Voiture voiture);
 }

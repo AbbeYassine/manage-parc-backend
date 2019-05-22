@@ -1,84 +1,83 @@
 package com.isgis.manageparc.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
-    @Entity
-    public class Mission {
-        @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
-        private Integer id;
+@Entity
+public class Mission {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
 
-        private String voiture;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "voiture_id")
+    private Voiture voiture;
 
-        private String employe;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "employe_id")
+    private Employe employe;
 
-        private String dateDebut;
+    private String dateDebut;
 
-        private String datefin;
+    private String dateFin;
 
-        private String montant;
+    private String montant;
 
-        private String objet;
+    private String objet;
 
-        public Integer getId() {
-            return id;
-        }
+    public Integer getId() {
+        return id;
+    }
 
-        public void setId(Integer id) {
-            this.id = id;
-        }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-        public String getDateDebut() {
-            return dateDebut;
-        }
+    public String getDateDebut() {
+        return dateDebut;
+    }
 
-        public void setDateDebut(String dateDebut) {
-            this.dateDebut = dateDebut;
-        }
+    public void setDateDebut(String dateDebut) {
+        this.dateDebut = dateDebut;
+    }
 
-        public String getDatefin() {
-            return datefin;
-        }
+    public String getDateFin() {
+        return dateFin;
+    }
 
-        public void setDatefin(String datefin) {
-            this.datefin = datefin;
-        }
+    public void setDateFin(String dateFin) {
+        this.dateFin = dateFin;
+    }
 
-        public String getEmploye() {
-            return employe;
-        }
+    public String getMontant() {
+        return montant;
+    }
 
-        public void setEmploye(String employe) {
-            this.employe = employe;
-        }
+    public void setMontant(String montant) {
+        this.montant = montant;
+    }
 
-        public String getVoiture() {
-            return voiture;
-        }
+    public String getObjet() {
+        return objet;
+    }
 
-        public void setVoiture(String voiture) {
-            this.voiture = voiture;
-        }
+    public void setObjet(String objet) {
+        this.objet = objet;
+    }
 
-        public String getMontant() {
-            return montant;
-        }
+    public Voiture getVoiture() {
+        return voiture;
+    }
 
-        public void setMontant(String montant) {
-            this.montant = montant;
-        }
+    public void setVoiture(Voiture voiture) {
+        this.voiture = voiture;
+    }
 
-        public String getObjet() {
-            return objet;
-        }
+    public Employe getEmploye() {
+        return employe;
+    }
 
-        public void setObjet(String objet) {
-            this.objet = objet;
-        }
-
-
+    public void setEmploye(Employe employe) {
+        this.employe = employe;
+    }
 }
