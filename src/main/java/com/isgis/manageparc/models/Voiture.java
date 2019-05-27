@@ -1,5 +1,7 @@
 package com.isgis.manageparc.models;
 
+import org.hibernate.annotations.ColumnDefault;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -20,8 +22,39 @@ public class Voiture {
 
     private String carburant;
 
+    @Column(columnDefinition = "boolean default 1")
+    private boolean etat;
+
+    private boolean taxes;
+
+    private boolean visite;
+
     @Column(name = "date_mise_circulation")
     private Date dateMiseCirculation;
+
+    public boolean isEtat() {
+        return etat;
+    }
+
+    public void setEtat(boolean etat) {
+        this.etat = etat;
+    }
+
+    public boolean isTaxes() {
+        return taxes;
+    }
+
+    public void setTaxes(boolean taxes) {
+        this.taxes = taxes;
+    }
+
+    public boolean isVisite() {
+        return visite;
+    }
+
+    public void setVisite(boolean visite) {
+        this.visite = visite;
+    }
 
     public Integer getId() {
         return id;

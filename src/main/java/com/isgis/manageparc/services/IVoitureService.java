@@ -14,4 +14,8 @@ public interface IVoitureService {
     Voiture update(Voiture voiture);
 
     void deleteById(Integer voitureId);
+
+    void updateEtatVoiture(Voiture voiture, boolean etat);
+
+    List<Voiture> getAllDisponible();
 }

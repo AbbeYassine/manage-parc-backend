@@ -7,6 +7,8 @@ public class Maintenance {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "voiture_id")
     private Voiture voiture;
@@ -25,6 +27,7 @@ public class Maintenance {
     public void setId(Integer id) {
         this.id = id;
     }
+
     public String getMontant() {
         return montant;
     }
@@ -42,11 +45,11 @@ public class Maintenance {
 
     }
 
-    public String getObjet() {
+    public String getKilometrage() {
         return kilometrage;
     }
 
-    public void setObjet(String objet) {
+    public void setKilometrage(String kilometrage) {
         this.kilometrage = kilometrage;
     }
 
@@ -56,7 +59,8 @@ public class Maintenance {
 
     public void setVoiture(Voiture voiture) {
         this.voiture = voiture;
-    }}
+    }
+}
 
 
 

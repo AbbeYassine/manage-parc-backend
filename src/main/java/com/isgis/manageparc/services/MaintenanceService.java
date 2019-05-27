@@ -1,7 +1,6 @@
 package com.isgis.manageparc.services;
 
 
-
 import com.isgis.manageparc.models.Maintenance;
 import com.isgis.manageparc.models.Voiture;
 import com.isgis.manageparc.models.dto.MaintenanceDTO;
@@ -38,7 +37,7 @@ public class MaintenanceService implements IMaintenanceService {
     }
 
     @Override
-    public void deleteById(Integer missionId) {
+    public void deleteById(Integer maintenanceId) {
         maintenanceRepository.deleteById(maintenanceId);
     }
 
@@ -46,10 +45,9 @@ public class MaintenanceService implements IMaintenanceService {
     public Maintenance convertDTOToMaintenance(MaintenanceDTO maintenanceDTO, Voiture voiture) {
         Maintenance maintenance = new Maintenance();
         maintenance.setDatemaintenance(maintenanceDTO.getDatemaintenance());
+        maintenance.setKilometrage(maintenanceDTO.getKilometrage());
         maintenance.setVoiture(voiture);
         maintenance.setMontant(maintenanceDTO.getMontant());
-        maintenance.setkilometrage(maintenanceDTO.getKilometrage());
-
         return maintenance;
     }
 }

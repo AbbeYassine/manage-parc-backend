@@ -37,4 +37,15 @@ public class VoitureService implements IVoitureService {
     public void deleteById(Integer voitureId) {
         voitureRepository.deleteById(voitureId);
     }
+
+    @Override
+    public void updateEtatVoiture(Voiture voiture, boolean etat) {
+        voiture.setEtat(etat);
+        voitureRepository.save(voiture);
+    }
+
+    @Override
+    public List<Voiture> getAllDisponible() {
+        return voitureRepository.findByEtat(true);
+    }
 }

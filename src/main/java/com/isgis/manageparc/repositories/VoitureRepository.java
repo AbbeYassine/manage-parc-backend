@@ -16,4 +16,5 @@ public interface VoitureRepository extends JpaRepository<Voiture, Integer> {
     int countPerImm(String immat);
 
 
+    List<Voiture> findByEtat(boolean b);
 }

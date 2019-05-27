@@ -11,10 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/voiture")
-public class
-
-
-VoitureController {
+public class VoitureController {
 
     @Autowired
     private IVoitureService voitureService;
@@ -23,6 +20,12 @@ VoitureController {
     @ResponseStatus(HttpStatus.ACCEPTED)
     public List<Voiture> getAll() {
         return voitureService.getAll();
+    }
+
+    @GetMapping("/disponible")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Voiture> getAllDisponible() {
+        return voitureService.getAllDisponible();
     }
 
     @PostMapping("")
